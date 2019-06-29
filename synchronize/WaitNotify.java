@@ -1,10 +1,12 @@
-package threadtest;
+package threadtest.synchronize;
+
+import threadtest.SleepUntils;
 
 import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
-public class WitNotify {
+public class WaitNotify {
     static boolean flag=true;
     static Object lock=new Object();
 
