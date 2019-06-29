@@ -1,4 +1,4 @@
-package threadtest;
+package threadtest.synchronize;
 
 /**
  * @author tktktkl@foxmail.com

@@ -8,10 +8,6 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-/**
- * Created by zejian on 2017/7/22.
- * Blog : http://blog.csdn.net/javazejian [原文地址,请尊重原创]
- */
 public class ResourceByCondition {
     private String name;
     private int count = 1;

@@ -7,7 +7,7 @@ package threadtest.aqs;
 public class Muti_Producer_ConsumerByCondition {
 
     public static void main(String[] args) {
-        ResourceByCondition r = new ResourceByCondition();
+        ResourceByCondition r=new ResourceByCondition ();
         Mutil_Producer pro = new Mutil_Producer(r);
         Mutil_Consumer con = new Mutil_Consumer(r);
         //生产者线程

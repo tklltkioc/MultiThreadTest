@@ -32,6 +32,7 @@ public class AtomicIntegerFieldUpdaterDemo {
         }
     }
 
+    static AtomicIntegerFieldUpdater<Candidate>aaa=AtomicIntegerFieldUpdater.newUpdater (Candidate.class, "score");
     static AtomicIntegerFieldUpdater<Candidate> atIntegerUpdater
             = AtomicIntegerFieldUpdater.newUpdater(Candidate.class, "score");
 
@@ -70,8 +71,8 @@ public class AtomicIntegerFieldUpdaterDemo {
 
         /**
          * 输出结果:
-         * 最终分数score=5976
-         校验分数allScore=5976
+         * 最终分数score=6013
+         校验分数allScore=6013
          Game{id=2, name='JAVA-HHH'}
          */
     }

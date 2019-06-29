@@ -51,11 +51,13 @@ public class ABADemo {
         @Override
         public void run() {
             int time=atomicStampedR.getStamp();
+            System.out.println("sleep 前 t3 time:"+time);
             //更新为200
             atomicStampedR.compareAndSet(100, 200,time,time+1);
             //更新为100
             int time2=atomicStampedR.getStamp();
             atomicStampedR.compareAndSet(200, 100,time2,time2+1);
+            System.out.println("sleep hou t4 time:"+time2);
         }
     });
 
