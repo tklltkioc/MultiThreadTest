@@ -7,7 +7,7 @@ package MultiThreadTest.aqs;
 public class Muti_Producer_ConsumerByCondition {
 
     public static void main (String[] args) {
-        threadtest.aqs.ResourceByCondition r = new threadtest.aqs.ResourceByCondition ();
+        ResourceByCondition r = new ResourceByCondition ();
         Mutil_Producer pro = new Mutil_Producer (r);
         Mutil_Consumer con = new Mutil_Consumer (r);
         //生产者线程
@@ -28,9 +28,9 @@ public class Muti_Producer_ConsumerByCondition {
  * @decrition 生产者线程
  */
 class Mutil_Producer implements Runnable {
-    private threadtest.aqs.ResourceByCondition r;
+    private ResourceByCondition r;
 
-    Mutil_Producer (threadtest.aqs.ResourceByCondition r) {
+    Mutil_Producer (ResourceByCondition r) {
         this.r = r;
     }
 
@@ -45,9 +45,9 @@ class Mutil_Producer implements Runnable {
  * @decrition 消费者线程
  */
 class Mutil_Consumer implements Runnable {
-    private threadtest.aqs.ResourceByCondition r;
+    private ResourceByCondition r;
 
-    Mutil_Consumer (threadtest.aqs.ResourceByCondition r) {
+    Mutil_Consumer (ResourceByCondition r) {
         this.r = r;
     }
 

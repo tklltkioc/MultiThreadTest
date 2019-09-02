@@ -1,6 +1,7 @@
 package MultiThreadTest.synchronize;
 
-import threadtest.SleepUntils;
+
+import MultiThreadTest.SleepUntils;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
