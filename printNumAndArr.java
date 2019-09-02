@@ -1,4 +1,4 @@
-package threadtest;
+package MultiThreadTest;
 
 public class printNumAndArr {
     static Object lock = new Object ();

@@ -1,14 +1,14 @@
-package threadtest;
+package MultiThreadTest;
 
 import java.util.concurrent.TimeUnit;
 
 public class SleepUntils {
-    public static final void second(long seconds){
+    public static final void second(long seconds) {
 
         try {
-            TimeUnit.SECONDS.sleep(seconds);
+            TimeUnit.SECONDS.sleep (seconds);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            e.printStackTrace ();
         }
     }
 }

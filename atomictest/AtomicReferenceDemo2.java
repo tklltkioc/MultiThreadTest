@@ -1,4 +1,4 @@
-package threadtest.atomictest;
+package MultiThreadTest.atomictest;
 
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -8,33 +8,33 @@ import java.util.concurrent.atomic.AtomicReference;
  */
 public class AtomicReferenceDemo2 {
 
-    public static AtomicReference<User> atomicUserRef = new AtomicReference<User>();
+    public static AtomicReference<User> atomicUserRef = new AtomicReference<User> ();
 
-    public static void main(String[] args) {
-        User user = new User("ss", 18);
-        atomicUserRef.set(user);
-        System.out.println(atomicUserRef.get().toString());
-        User updateUser = new User("sa", 25);
-        atomicUserRef.compareAndSet(user, updateUser);
+    public static void main (String[] args) {
+        User user = new User ("ss", 18);
+        atomicUserRef.set (user);
+        System.out.println (atomicUserRef.get ().toString ());
+        User updateUser = new User ("sa", 25);
+        atomicUserRef.compareAndSet (user, updateUser);
         //执行结果:User{name='sa', age=25}
-        System.out.println(atomicUserRef.get().toString());
+        System.out.println (atomicUserRef.get ().toString ());
     }
 
     static class User {
         public String name;
         private int age;
 
-        public User(String name, int age) {
+        public User (String name, int age) {
             this.name = name;
             this.age = age;
         }
 
-        public String getName() {
+        public String getName () {
             return name;
         }
 
         @Override
-        public String toString() {
+        public String toString () {
             return "User{" +
                     "name='" + name + '\'' +
                     ", age=" + age +

@@ -1,4 +1,4 @@
-package threadtest.bfToolsTest;
+package MultiThreadTest.bfToolsTest;
 
 import java.util.concurrent.CountDownLatch;
 
@@ -7,12 +7,12 @@ import java.util.concurrent.CountDownLatch;
  * @date 2019/6/29 11:44
  */
 public class CountTest {
-    static CountDownLatch countDownLatch=new CountDownLatch (3);
+    static CountDownLatch countDownLatch = new CountDownLatch (3);
 
-    public static void main (String[] args) throws InterruptedException{
+    public static void main(String[] args) throws InterruptedException {
         new Thread (new Runnable () {
             @Override
-            public void run () {
+            public void run() {
                 System.out.println (1);
                 countDownLatch.countDown ();
                 System.out.println (2);

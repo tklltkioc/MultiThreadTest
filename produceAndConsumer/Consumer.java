@@ -1,4 +1,4 @@
-package threadtest.produceAndConsumer;
+package MultiThreadTest.produceAndConsumer;
 
 import java.util.Queue;
 
@@ -7,21 +7,23 @@ import java.util.Queue;
  * @date 2019/8/8 12:50
  */
 public class Consumer extends Thread {
-    private  final Queue sharedQueue;
-    public Consumer (Queue sharedQueue){
-        super();
+    private final Queue sharedQueue;
+
+    public Consumer(Queue sharedQueue) {
+        super ();
         this.sharedQueue = sharedQueue;
     }
+
     @Override
-    public void run(){
+    public void run() {
         for (int i = 0; i < 100; i++) {
-            synchronized (sharedQueue){
-                while (sharedQueue.size () == 0){
-                    try{
+            synchronized (sharedQueue) {
+                while (sharedQueue.size () == 0) {
+                    try {
                         System.out.println ("队列空了，等待生产");
                         sharedQueue.wait ();
 
-                    }catch (InterruptedException e){
+                    } catch (InterruptedException e) {
                         e.printStackTrace ();
                     }
 

@@ -1,4 +1,4 @@
-package threadtest.produceAndConsumer;
+package MultiThreadTest.produceAndConsumer;
 
 import java.util.Queue;
 
@@ -11,31 +11,30 @@ public class Producer extends Thread {
     private final Queue sharedQueue;
 
     public Producer (Queue sharedQueue) {
-        super();
+        super ();
         this.sharedQueue = sharedQueue;
     }
 
     @Override
-    public void run(){
+    public void run () {
         for (int i = 0; i < 100; i++) {
-            synchronized (sharedQueue){
+            synchronized (sharedQueue) {
                 while (sharedQueue.size () >= MAX_QUEUE_SIZE) {
                     System.out.println ("队列满了，阻塞");
-                    try{
+                    try {
                         sharedQueue.wait ();
-                    }catch (InterruptedException e){
+                    } catch (InterruptedException e) {
                         e.printStackTrace ();
                     }
                 }
                 sharedQueue.add (i);
-                System.out.println ("进行生产："+ i);
+                System.out.println ("进行生产：" + i);
                 sharedQueue.notify ();
             }
         }
 
 
     }
-
 
 
 }

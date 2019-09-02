@@ -1,4 +1,4 @@
-package threadtest.produceAndConsumer;
+package MultiThreadTest.produceAndConsumer;
 
 import java.util.LinkedList;
 import java.util.Queue;

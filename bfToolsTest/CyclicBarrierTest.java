@@ -1,4 +1,4 @@
-package threadtest.bfToolsTest;
+package MultiThreadTest.bfToolsTest;
 
 import java.util.concurrent.*;
 
@@ -7,34 +7,36 @@ import java.util.concurrent.*;
  * @date 2019/6/29 14:16
  */
 public class CyclicBarrierTest {
-    private static final int threadCount=500;
-    static final CyclicBarrier cyclicBarrier=new CyclicBarrier (5);
-    public static void main (String[] args) throws InterruptedException{
-        ExecutorService threadPool= Executors.newFixedThreadPool (5);
+    private static final int threadCount = 500;
+    static final CyclicBarrier cyclicBarrier = new CyclicBarrier (5);
+
+    public static void main (String[] args) throws InterruptedException {
+        ExecutorService threadPool = Executors.newFixedThreadPool (5);
 
         for (int i = 0; i < threadCount; i++) {
-            final int threadNum=i;
+            final int threadNum = i;
             Thread.sleep (1000);
-            threadPool.execute (()->{
+            threadPool.execute (() -> {
                 try {
                     test (threadNum);
-                }catch (InterruptedException e){
+                } catch (InterruptedException e) {
                     e.printStackTrace ();
-                }catch (BrokenBarrierException e){
+                } catch (BrokenBarrierException e) {
                     e.printStackTrace ();
                 }
             });
         }
         threadPool.shutdown ();
     }
-    public static void test(int threadnum) throws InterruptedException,BrokenBarrierException {
-        System.out.println ("threadnum"+threadnum+" is ready");
+
+    public static void test (int threadnum) throws InterruptedException, BrokenBarrierException {
+        System.out.println ("threadnum" + threadnum + " is ready");
         try {
-            cyclicBarrier.await (60,TimeUnit.SECONDS);
-        }catch (Exception e){
+            cyclicBarrier.await (60, TimeUnit.SECONDS);
+        } catch (Exception e) {
             System.out.println ("cycexception");
         }
-        System.out.println ("threadnum"+threadnum+" is finish");
+        System.out.println ("threadnum" + threadnum + " is finish");
 
     }
 
